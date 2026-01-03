@@ -7,11 +7,10 @@ export default function MissingSequence() {
     let commonDifference = Math.min(...arr.slice(1)?.map((n, i) => n - arr[i]));
     let missing;
     arr.map((_, i) => {
-      if (i > 0 && arr[i] - arr[i - 1] !== Number(commonDifference)) {
+      if (i > 0 && arr[i] - arr[i - 1] !== commonDifference) {
         missing = arr[i - 1] + commonDifference;
       }
     });
-
     return missing;
   };
   console.log(findMissing(), "middinf");

@@ -1,12 +1,13 @@
 import React from "react";
 
 function MinMAx() {
-  const arr = [10, 5, 20, 3, 8, 0];
+  const arr = [10, 5, 20, 3, 8, 1];
 
   const findMinMax = (arr) => {
     let min = arr[0];
     let max = arr[0];
-    for (let i = 1; i <= arr.length; i++) {
+
+    for (let i = 0; i <= arr.length; i++) {
       if (arr[i] < min) {
         min = arr[i];
       }
@@ -15,6 +16,10 @@ function MinMAx() {
       }
     }
     return { min, max };
+
+   
+
+    return sort
   };
 
   console.log(findMinMax(arr));

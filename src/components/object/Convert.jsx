@@ -10,8 +10,13 @@ function Convert() {
     initial[current.id] = current.name;
     return initial;
   }, {});
+  
+// let res ={}
+//   input.forEach((item)=>{
+//     res[item.id] = item.name
+//   })
 
-  console.log(output, "otup");
+  console.log(res, "otup");
 
   return <div></div>;
 }
