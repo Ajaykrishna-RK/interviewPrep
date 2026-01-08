@@ -14,9 +14,13 @@ export default function RemoveFalsy() {
   //     return falsy;
   //   };
 
-  const arr = [11, 12, 13, 15, 16];
-  const odd = arr.filter((item) => item % 2 !== 0);
-  console.log(odd, "s");
+  // const arr = [11, 12, 13, 15, 16];
+  // const odd = arr.filter((item) => item % 2 !== 0);
+
+  const string = "reverse";
+
+  const rev = string.split("").reverse("").join("");
+  console.log(rev, "res");
 
   return <div></div>;
 }

@@ -16,6 +16,7 @@ import RemoveFalsy from "./components/ArrayMethods/RemoveFalsy";
 import ObjectK from "./components/object/ObjectK";
 import Convert from "./components/object/Convert";
 import ArraySum from "./components/logic/ArraySum";
+import CounterApp from "./components/machineTest/CounterApp";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
       {/* <Grouping /> */}
       {/* <Duplicate/> */}
       {/* <MinMAx /> */}
-      {/* <ReverseArray /> */}
+      <ReverseArray />
       {/* <Target /> */}
       {/* <MissingSequence /> */}
       {/* <RemoveFalsy /> */}
@@ -35,7 +36,9 @@ function App() {
       {/* <Convert /> */}
       {/* <StopWatch /> */}
       {/* <Todo /> */}
-      <ArraySum />
+      {/* <ArraySum /> */}
+
+      {/* <CounterApp/> */}
     </>
   );
 }
