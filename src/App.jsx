@@ -13,10 +13,10 @@ import ReverseArray from "./components/ArrayMethods/ReverseArray";
 import Target from "./components/ArrayMethods/Target";
 import MissingSequence from "./components/ArrayMethods/MissingSequence";
 import RemoveFalsy from "./components/ArrayMethods/RemoveFalsy";
-import ObjectK from "./components/object/ObjectK";
 import Convert from "./components/object/Convert";
 import ArraySum from "./components/logic/ArraySum";
 import CounterApp from "./components/machineTest/CounterApp";
+import Page from "./components/logic/Page";
 
 function App() {
   return (
@@ -28,16 +28,16 @@ function App() {
       {/* <Grouping /> */}
       {/* <Duplicate/> */}
       {/* <MinMAx /> */}
-      <ReverseArray />
+      {/* <ReverseArray /> */}
       {/* <Target /> */}
       {/* <MissingSequence /> */}
       {/* <RemoveFalsy /> */}
-      {/* <ObjectK /> */}
+   
       {/* <Convert /> */}
       {/* <StopWatch /> */}
       {/* <Todo /> */}
       {/* <ArraySum /> */}
-
+      <Page />
       {/* <CounterApp/> */}
     </>
   );
