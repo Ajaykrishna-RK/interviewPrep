@@ -6,14 +6,15 @@ function StopWatch() {
   const [searchText, setSearchText] = useState("");
 
   let timerRef = useRef(null);
-
   useEffect(() => {
-    if (running)
+    if (running) {
       timerRef.current = setInterval(() => {
         setTimer((prev) => prev + 1);
-      }, 1000);
-    return () => clearInterval(timerRef.current);
+      }, 100);
+      return () => clearInterval(timerRef.current);
+    }
   }, [running]);
+
   const handleReset = () => {
     setRunning(false);
     clearInterval(timerRef.current);
@@ -22,13 +23,12 @@ function StopWatch() {
 
   useEffect(() => {
     if (searchText) {
-      const int = setTimeout(() => {
+      const timeout = setTimeout(() => {
         console.log(searchText);
-      }, 1000);
-      return () => clearTimeout(int);
+      }, 500);
+      return () => clearInterval(timeout);
     }
   }, [searchText]);
-
   return (
     <div>
       <button onClick={() => setRunning(!running)}>Start/Stop</button>

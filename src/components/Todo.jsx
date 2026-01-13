@@ -1,87 +1,82 @@
 import React, { useState } from "react";
 
 function Todo() {
-  const [todo, setTodo] = useState([]);
-  const [data, setData] = useState("");
-  const [editIndex, setEditIndex] = useState(null);
+  const [input, setInput] = useState("");
+  const [todos, setTodos] = useState([]);
+  const [editTodo, setEditTodo] = useState(null);
 
-  const handleAdd = () => {
-    if (data === "") return alert("write something");
-    const newTodo = {
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+  const handleAddTodo = () => {
+    if (!input || input == "") return alert("input cant be empty");
+    let newTodo = {
+      todo: input,
       completed: false,
-      todo: data,
     };
-    setTodo((prev) => [...prev, newTodo]);
-    setData("");
+    setTodos((prev) => [...prev, newTodo]);
+    setInput("");
   };
 
   const handleEdit = (index) => {
-    setEditIndex(index);
-    setData(todo[index]?.todo);
+    setEditTodo(index);
+    setInput(todos[index].todo);
   };
 
-  const editTodo = () => {
-    const newTodo = todo.map((item, index) =>
-      index === editIndex ? { ...item, todo: data } : item
+  const handleEditTodo = () => {
+    const editedTodo = todos.map((item, i) =>
+      i === editTodo ? { ...item, todo: input } : item
     );
-    setTodo(newTodo);
-    setEditIndex(null);
-    setData("");
+    setTodos(editedTodo);
+    setEditTodo(null);
+    setInput("");
   };
 
-  const deleteTodo = (index) => {
-    const deletedTodo = todo.filter((_, i) => i !== index);
-    setTodo(deletedTodo);
-  };
-
-  const handleToggle = (index) => {
-    const newTodo = todo.map((item, i) =>
-      i === index ? { ...item, completed: item?.completed ? false : true } : item
-    );
-    setTodo(newTodo);
+  const handleTodos = () => {
+    if (editTodo !== null) {
+      handleEditTodo();
+    } else {
+      handleAddTodo();
+    }
   };
 
   return (
-    <div className="justify-center items-center flex flex-col">
-      <div className="mt-10 shadow-lg p-[10px] flex gap-3">
+    <div className="justify-center items-center flex flex-col h-screen">
+      <div className="">
         <input
+          onChange={(e) => handleChange(e)}
           type="text"
-          value={data}
-          onChange={(e) => setData(e.target.value)}
-          className="border-[1px] p-[10px] border-[#111]"
+          value={input}
+          className="border-[1px] shadow p-[10px] "
         />
         <button
-          onClick={() => (editIndex !== null ? editTodo() : handleAdd())}
-          className="border-[1px] px-[10px] rounded-[10px] cursor-pointer"
+          onClick={handleTodos}
+          className="border-[1px] ml-4 p-[4px] cursor-pointer"
         >
-          Add Todo
+          {" "}
+          Submit{" "}
         </button>
       </div>
-      {todo?.map((item, index) => (
-        <div className="flex gap-3 mt-4">
-          {" "}
-          <p>{item?.todo}</p>{" "}
-          <button
-            onClick={() => handleToggle(index)}
-            className="border-[1px] px-[10px] rounded-[10px] cursor-pointer"
-          >
-            {item?.completed ? "completed" : "not completed"}
-          </button>
-          <button
-            onClick={() => handleEdit(index)}
-            className="border-[1px] px-[10px] rounded-[10px] cursor-pointer"
-          >
-            Edit
-          </button>{" "}
-          <button
-            onClick={() => deleteTodo(index)}
-            className="border-[1px] px-[10px] rounded-[10px] cursor-pointer"
-          >
-            Delete
-          </button>{" "}
+      {todos?.length > 0 && (
+        <div className="mt-6 bg-[#cecbcb] rounded-[10px] p-[10px]">
+          {todos?.map((item, i) => (
+            <div className="flex gap-2">
+              <p>
+                {item?.todo},{item?.completed ? "completed" : "pending"}
+              </p>
+              <button
+                onClick={() => handleEdit(i)}
+                className="border-[1px] ml-4 p-[4px] cursor-pointer"
+              >
+                Edit
+              </button>
+              <button className="border-[1px] ml-4 p-[4px] cursor-pointer">
+                Delete
+              </button>
+            </div>
+          ))}
         </div>
-      ))}
-      <div></div>
+      )}
     </div>
   );
 }

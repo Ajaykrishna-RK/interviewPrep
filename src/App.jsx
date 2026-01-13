@@ -36,8 +36,8 @@ function App() {
       {/* <Convert /> */}
       {/* <StopWatch /> */}
       {/* <Todo /> */}
-      {/* <ArraySum /> */}
-      <Page />
+      <ArraySum />
+      {/* <Page /> */}
       {/* <CounterApp/> */}
     </>
   );
