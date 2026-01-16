@@ -28,16 +28,17 @@ function App() {
       {/* <Grouping /> */}
       {/* <Duplicate/> */}
       {/* <MinMAx /> */}
-      {/* <ReverseArray /> */}
+      <ReverseArray />
       {/* <Target /> */}
       {/* <MissingSequence /> */}
       {/* <RemoveFalsy /> */}
-   
+
       {/* <Convert /> */}
       {/* <StopWatch /> */}
       {/* <Todo /> */}
-      <ArraySum />
+
       {/* <Page /> */}
+      {/* <ArraySum /> */}
       {/* <CounterApp/> */}
     </>
   );

@@ -23,10 +23,33 @@ function ReverseArray() {
   // const rev = [...arr].reverse();
   // console.log(rev);
 
-  const string = "monu";
+  const string = "hello"
 
-  const reverse = string?.split("")?.reverse("")?.join("");
-  console.log(reverse);
+  // const reverse = string?.split("")?.reverse("")?.join("");
+  // const reverse = (string) => {
+  //   let res = []
+  //   for (let i = string.length-1; i >= 0; i--) {
+  //     res.push(string[i])
+  //   }
+  //  console.log(res)
+  // }
+
+const reverse = (str)=>{
+ let string = str.split("")
+  let left =0
+  let right = string.length-1
+while(left<right){
+  [string[left] ,string[right]] = [string[right],string[left]]
+  left++
+  right--
+}
+return string.join("")
+
+}
+
+  console.log(reverse(string));
+
+
 
   return <div></div>;
 }

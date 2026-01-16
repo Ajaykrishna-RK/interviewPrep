@@ -12,21 +12,34 @@ function ArraySum() {
   // sum()
   // console.log(output)
 
-  for (let i = 1; i <= 5; i++) {
-    let row = "";
-    for (let j = 1; j <= i; j++) {
-      row += i;
-    }
-    console.log(row);
-  }
+  // for (let i = 1; i <= 5; i++) {
+  //   let row = "";
+  //   for (let j = 1; j <= i; j++) {
+  //     row += i;
+  //   }
+  //   console.log(row);
+  // }
 
-    for (let i = 5; i >= 1; i--) {
-    let row = "";
-    for (let j = 1; j <= i; j++) {
-      row += i;
+  //   for (let i = 5; i >= 1; i--) {
+  //   let row = "";
+  //   for (let j = 1; j <= i; j++) {
+  //     row += i;
+  //   }
+  //   console.log(row);
+  // }
+
+
+  const arr = [1, 2, 3, 4]
+
+  const sumOfEvenNumbers = arr.reduce((acc, curr) => {
+    if (curr % 2 === 0) {
+   acc=  acc + curr
     }
-    console.log(row);
-  }
+    return acc
+  }, 0)
+
+  console.log(sumOfEvenNumbers, "sum")
+
 
   return <div></div>;
 }

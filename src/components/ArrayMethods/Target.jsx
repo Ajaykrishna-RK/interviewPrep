@@ -8,7 +8,7 @@ function Target() {
     for (let i = 0; i < arr.length; i++) {
       let need = target - arr[i];
 
-      if (!map[need]) {
+      if (map[need] !== undefined) {
         return [need, arr[i]];
       }
       map[arr[i]] = i;
