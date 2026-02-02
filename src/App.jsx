@@ -17,6 +17,7 @@ import Convert from "./components/object/Convert";
 import ArraySum from "./components/logic/ArraySum";
 import CounterApp from "./components/machineTest/CounterApp";
 import Page from "./components/logic/Page";
+import FindStrNum from "./components/ArrayMethods/FindStrNum";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       {/* <Page /> */}
       {/* <ArraySum /> */}
       {/* <CounterApp/> */}
+      {/* <FindStrNum /> */}
     </>
   );
 }

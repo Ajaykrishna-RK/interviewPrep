@@ -34,20 +34,25 @@ function ReverseArray() {
   //  console.log(res)
   // }
 
-const reverse = (str)=>{
- let string = str.split("")
-  let left =0
-  let right = string.length-1
-while(left<right){
-  [string[left] ,string[right]] = [string[right],string[left]]
-  left++
-  right--
-}
-return string.join("")
 
-}
+  const reverse = (string) => {
 
-  console.log(reverse(string));
+    let arr = string
+    let left = 0
+    let right = arr.length - 1
+
+    while (left < right) {
+      [arr[left], arr[right]] = [arr[right], arr[left]]
+      left++
+      right--
+    }
+
+    return arr
+
+  }
+  
+console.log(reverse([1,2,3,4,5]))
+  // console.log(reverse(string));
 
 
 
